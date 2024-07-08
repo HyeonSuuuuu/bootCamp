@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\xysin\\source\\repos\\practice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8132CAA5-D84D-4333-B9B7-DC030E4E6CFC}|practice\\practice.vcxproj|C:\\Users\\xysin\\source\\repos\\practice\\practice\\\uCD5C\uB313\uAC12\uC744\uBC18\uD658\uD558\uB294.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8132CAA5-D84D-4333-B9B7-DC030E4E6CFC}|practice\\practice.vcxproj|solutionrelative:practice\\\uCD5C\uB313\uAC12\uC744\uBC18\uD658\uD558\uB294.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8132CAA5-D84D-4333-B9B7-DC030E4E6CFC}|practice\\practice.vcxproj|C:\\Users\\xysin\\source\\repos\\practice\\practice\\\uD569\uACA9\uBD88\uD569\uACA9\uD310\uB2E8\uD558\uAE30.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8132CAA5-D84D-4333-B9B7-DC030E4E6CFC}|practice\\practice.vcxproj|solutionrelative:practice\\\uD569\uACA9\uBD88\uD569\uACA9\uD310\uB2E8\uD558\uAE30.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\uD569\uACA9\uBD88\uD569\uACA9\uD310\uB2E8\uD558\uAE30.c",
+              "DocumentMoniker": "C:\\Users\\xysin\\source\\repos\\practice\\practice\\\uD569\uACA9\uBD88\uD569\uACA9\uD310\uB2E8\uD558\uAE30.c",
+              "RelativeDocumentMoniker": "practice\\\uD569\uACA9\uBD88\uD569\uACA9\uD310\uB2E8\uD558\uAE30.c",
+              "ToolTip": "C:\\Users\\xysin\\source\\repos\\practice\\practice\\\uD569\uACA9\uBD88\uD569\uACA9\uD310\uB2E8\uD558\uAE30.c",
+              "RelativeToolTip": "practice\\\uD569\uACA9\uBD88\uD569\uACA9\uD310\uB2E8\uD558\uAE30.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-08T05:47:01.948Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\uCD5C\uB313\uAC12\uC744\uBC18\uD658\uD558\uB294.c",
+              "DocumentMoniker": "C:\\Users\\xysin\\source\\repos\\practice\\practice\\\uCD5C\uB313\uAC12\uC744\uBC18\uD658\uD558\uB294.c",
+              "RelativeDocumentMoniker": "practice\\\uCD5C\uB313\uAC12\uC744\uBC18\uD658\uD558\uB294.c",
+              "ToolTip": "C:\\Users\\xysin\\source\\repos\\practice\\practice\\\uCD5C\uB313\uAC12\uC744\uBC18\uD658\uD558\uB294.c",
+              "RelativeToolTip": "practice\\\uCD5C\uB313\uAC12\uC744\uBC18\uD658\uD558\uB294.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-08T08:19:49.631Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
