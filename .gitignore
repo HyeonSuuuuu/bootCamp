@@ -53,4 +53,4 @@ dkms.conf
 
 
 # 디버깅폴더
-x64/
+x64/Debug/
