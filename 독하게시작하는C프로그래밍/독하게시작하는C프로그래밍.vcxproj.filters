@@ -72,5 +72,11 @@
     <ClCompile Include="최댓값을반환하는.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="잘못된메모리복사.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyString함수작성하기.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
