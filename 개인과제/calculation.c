@@ -72,6 +72,16 @@ int InfixToPostfix(const char* const infix, char* const postfix)
 			else {
 				if(!StackIsEmpty(&s) && StackPeek(&s) == '(')
 					StackPush(&s, infix[cntIn]);
+				else if (priority == 1 && (cntIn == 0 || !isdigit(infix[cntIn - 1]))) { // 단항 연산 처리
+					postfix[cntPost++] = ' '; // 단항 연산 구분
+					postfix[cntPost++] = infix[cntIn++];
+					if (isdigit(infix[cntIn])) {
+						postfix[cntPost++] = infix[cntIn];
+						while (isdigit(infix[cntIn + 1]))
+							postfix[cntPost++] = infix[++cntIn];
+						postfix[cntPost++] = ' ';
+					}
+				}
 				else {
 					while (!StackIsEmpty(&s) && priority <= Priority(StackPeek(&s))) {
 						postfix[cntPost++] = StackPop(&s);
@@ -97,17 +107,21 @@ int CalculatePostfix(const char* postfix, int* remain)
 	int flag = 0;
 	while (postfix[cntPost] != '\0') {
 		
-		if (isdigit(postfix[cntPost])) {
+		if (postfix[cntPost] == ' ' || isdigit(postfix[cntPost])) {
 			int cntTmp = 0;
-			char tmp[10] = { 0 };
+			char tmp[12] = { 0 };
+			if (postfix[cntPost] == ' ') { // 단항 연산 처리
+				cntPost++;
+				tmp[cntTmp++] = postfix[cntPost++];
+			}
+
 			while (postfix[cntPost] != ' ') {
 				tmp[cntTmp++] = postfix[cntPost++];
 			}
 			StackPush(&s, atoi(tmp));
 		}
 		else {
-			rhs = StackPop(&s);
-			lhs = StackPop(&s);
+			rhs = StackPop(&s);			lhs = StackPop(&s);
 			switch (postfix[cntPost]) {
 			case '+':
 				StackPush(&s, Add(lhs, rhs));

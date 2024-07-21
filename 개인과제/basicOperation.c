@@ -30,8 +30,12 @@ int Sub(int lhs, int rhs)
 }
 int Mul(int lhs, int rhs)
 {
+	
 	int min = (lhs < rhs) ? lhs : rhs;
 	int max = (lhs > rhs) ? lhs : rhs;
+	Abs(&min);
+	Abs(&max);
+
 	int  result = 0;
 	while (min > 0) {
 		if(min & 0b1)
@@ -39,33 +43,60 @@ int Mul(int lhs, int rhs)
 		min >>= 1;
 		max <<= 1;
 	}
+	if ((rhs < 0 && lhs > 0) || (rhs > 0 && lhs < 0))
+		result = ~result + 1; // -부호 붙이기
 	return result;
 }
 int Div(int lhs, int rhs, int* remain) // 나눗셈이 여러번이라 나머지가 여러개인 경우: 나머지 합산
 {
+	int tmpLhs = lhs;
+	int tmpRhs = rhs;
+	
+	Abs(&tmpLhs);
+	Abs(&tmpRhs);
+
 	if (rhs == 0)
 		return 0;
 
 
-
 	int result = 0;
 	int tmp = 1;
-	int rhsPrev = rhs;
-	while (lhs >= (rhs << 1)) {
-		rhs <<= 1;
+	int rhsPrev = tmpRhs;
+	while (tmpLhs >= (tmpRhs << 1)) {
+		tmpRhs <<= 1;
 		tmp <<= 1;
 	}
 
 	while (tmp > 0) {
 
-		if (lhs >= rhs) {
-			lhs = Sub(lhs, rhs);
+		if (tmpLhs >= tmpRhs) {
+			tmpLhs = Sub(tmpLhs, tmpRhs);
 			result = Add(result, tmp);
 		}
-		rhs >>= 1;
+		tmpRhs >>= 1;
 		tmp >>= 1;
 	}
-	*remain += Add(*remain, lhs);
+	// 부호가 다를 경우 result는 음수이다.
+	if (lhs < 0 && rhs > 0 || lhs > 0 && rhs < 0) {
+		result = Add(~result, 1);
+	}
+
+	// lhs rhs가 음수, 음수 or 음수, 양수일 경우 나머지를 양수로 반환하기 위해 특별한 처리가 필요함.
+	if (tmpLhs != 0) {
+		if (lhs < 0 && rhs > 0)
+			result--;
+		if (lhs < 0 && rhs < 0)
+			result++;
+	}
+	*remain += Sub(lhs, Mul(result, rhs));
+
+
+
 	return result;
-	
+}
+
+void Abs(int* pNum)
+{
+	if (*pNum < 0)
+		*pNum = ~Add(*pNum, -1);
 }
