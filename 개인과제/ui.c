@@ -65,5 +65,8 @@ void Calculator()
 	int remain = 0;
 	int result = CalculatePostfix(szPostfix, &remain);
 
-	printf("결과값: %d\n나머지: %d\n", result, remain);
+	printf("결과값: %d\n", result);
+	if (remain != -1)
+		printf("나머지: %d", remain);
+	printf("\n");
 }

@@ -13,7 +13,7 @@ void printDecimalToBinary(int d)
 }
 
 int Add(int lhs, int rhs)
-{
+ {
 	int sum = lhs ^ rhs;
 	int carry = (lhs & rhs) << 1;
 	int tmp = 0;
@@ -41,7 +41,7 @@ int Mul(int lhs, int rhs)
 	}
 	return result;
 }
-int Div(int lhs, int rhs, int* remain)
+int Div(int lhs, int rhs, int* remain) // 나눗셈이 여러번이라 나머지가 여러개인 경우: 나머지 합산
 {
 	if (rhs == 0)
 		return 0;
@@ -65,7 +65,7 @@ int Div(int lhs, int rhs, int* remain)
 		rhs >>= 1;
 		tmp >>= 1;
 	}
-	*remain = Add(*remain, lhs);
+	*remain += Add(*remain, lhs);
 	return result;
 	
 }

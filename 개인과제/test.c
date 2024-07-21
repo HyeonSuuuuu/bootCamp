@@ -37,7 +37,9 @@ void CalculateTest01(void)
 	};
 
 	int result = 0;
+	int remain = 0;
 	for (int i = 0; i < 10; ++i) {
+		remain = 0;
 		if (i == 2)
 			printf("2");
 		char szPostfix[STACK_MAX * 2] = { 0 };
@@ -46,8 +48,8 @@ void CalculateTest01(void)
 			printf("잘못된 입력값\n");
 		else {
 			printf("%s - postFix: %s", formula[i], szPostfix);
-			int result = CalculatePostfix(szPostfix);
-			printf("result %d\n", result);
+			int result = CalculatePostfix(szPostfix, &remain);
+			printf("result %d나머지:%d\n", result, remain);
 		}
 	}
 

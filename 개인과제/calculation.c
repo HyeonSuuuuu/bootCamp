@@ -51,7 +51,7 @@ int InfixToPostfix(const char* const infix, char* const postfix)
 
 	while (infix[cntIn] != '\0') {
 		if (isdigit(infix[cntIn])) {
-			postfix[cntPost++] = infix[cntIn];
+ 			postfix[cntPost++] = infix[cntIn];
 			while(isdigit(infix[cntIn+1]))
 				postfix[cntPost++] = infix[++cntIn];
 			postfix[cntPost++] = ' ';
@@ -94,6 +94,7 @@ int CalculatePostfix(const char* postfix, int* remain)
 	StackInit(&s);
 	int cntPost = 0;
 	int lhs = 0, rhs = 0;
+	int flag = 0;
 	while (postfix[cntPost] != '\0') {
 		
 		if (isdigit(postfix[cntPost])) {
@@ -118,12 +119,14 @@ int CalculatePostfix(const char* postfix, int* remain)
 				StackPush(&s, Mul(lhs, rhs));
 				break;
 			case '/':
+				flag = 1;
 				StackPush(&s, Div(lhs, rhs, remain));
 				break;
 			}
 		}
 		cntPost++;
 	}
-
+	if (flag == 0)
+		*remain = -1; // 나눗셈 연산이 없기 때문에 나머지 출력 x
 	return StackPop(&s);
 }
