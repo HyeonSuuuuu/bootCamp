@@ -27,7 +27,7 @@ void EventLoopRun(USERDATA* pHead, USERDATA* pTail)
 			CheckFuncResult(result);
 			break;
 		case SEARCH:
-			result = Search(pHead);
+			result = Search(pHead, pTail);
 			CheckFuncResult(result);
 			break;
 		case PRINT:
@@ -68,7 +68,7 @@ void PrintList(const USERDATA* pHead)
 	puts("[End of list]\n");
 }
 
-ERROR_CODE Search(USERDATA* pHead)
+ERROR_CODE Search(USERDATA* pHead, USERDATA* pTail)
 {
 	printf("[1]SearchByName\t[2]SearchByAgeRange");
 	int input;
@@ -90,7 +90,7 @@ ERROR_CODE Search(USERDATA* pHead)
 			result = NOT_FOUND;
 	}
 	else if (input == 2) {
-		result = SearchByAgeIndex(pHead);
+		result = SearchByAgeIndex(pHead, pTail);
 	}
 	return result;
 }
@@ -162,7 +162,7 @@ ERROR_CODE Sort(USERDATA* pHead, USERDATA* pTail)
 	return result;
 }
 
-ERROR_CODE SearchByAgeIndex(USERDATA* pHead)
+ERROR_CODE SearchByAgeIndex(USERDATA* pHead, USERDATA* pTail)
 {
 	int min = 0;
 	int max = 1;
@@ -171,7 +171,7 @@ ERROR_CODE SearchByAgeIndex(USERDATA* pHead)
 	if (2 != scanf_s("%d%d%*c", &min, &max)) {
 		return INVALID_INPUT;
 	}
-
+	Sort(pHead, pTail);
 	USERDATA** pResult = (USERDATA**)SearchByIndexAgeRange(pHead, &cnt, min, max);
 	
 	if (pResult == NULL)

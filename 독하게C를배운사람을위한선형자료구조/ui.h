@@ -10,10 +10,10 @@ MY_MENU PrintMenu(void);
 void EventLoopRun(USERDATA* pHead, USERDATA* pTail);
 void PrintList(const USERDATA* pHead);
 void PrintOne(const USERDATA* pElement);
-ERROR_CODE Search(USERDATA* pTail);
+ERROR_CODE Search(USERDATA* pHead, USERDATA* pTail);
 ERROR_CODE New(USERDATA* pTail);
 ERROR_CODE Remove(USERDATA* pHead);
 
 void CheckFuncResult(ERROR_CODE result);
 ERROR_CODE Sort(USERDATA* pHead, USERDATA* pTail);
-ERROR_CODE SearchByAgeIndex(USERDATA* pHead);
+ERROR_CODE SearchByAgeIndex(USERDATA* pHead, USERDATA* pTail);

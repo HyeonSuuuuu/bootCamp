@@ -167,7 +167,7 @@ void** SearchByIndexAgeRange(USERDATA* pHead, size_t* cnt, int min, int max)
 		pHead = pHead->pNext;
 	}
 
-	void** pNodePtrList = malloc(sizeof(void*) * *cnt);
+	void** pNodePtrList = malloc(sizeof(void*)* *cnt);
 	pHead = pMin;
 	for (int i = 0; i < *cnt; ++i) {
 		pNodePtrList[i] = pMin;
