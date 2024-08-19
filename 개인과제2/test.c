@@ -6,7 +6,7 @@
 
 void AddNodeTest(MYNODE_MANAGER* pManager)
 {
-	USERDATA user[2] = { {"이현수", "010-7491-9992", "감정로 64"}, {"이수빈", "010-9950-4039", "감정로 64"} };
+	USERDATA user[2] = { {"홍길동", "010-1234-5678", "주소1"}, {"김길동", "010-2345-3456", "주소2"} };
 	AddNewNodeAtTail(pManager, &user[0], sizeof(user[0]), 0, 0);
 	AddNewNodeAtTail(pManager, &user[1], sizeof(user[1]), 0, 0);
 
