@@ -361,7 +361,7 @@ int SaveNodeToFile(MYNODE* pNode)
 		return 0;
 
 	FILE* fp = NULL;
-	fopen_s(&fp, filename, "rb+");
+	fopen_s(&fp, filename, "r+");
 	if (fp == NULL)
 		return 0;
 	

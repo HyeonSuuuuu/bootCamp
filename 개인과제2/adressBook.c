@@ -4,8 +4,10 @@
 #include "dummyUserData.h"
 #include "list.h"
 #include "test.h"
-#include <string.h>
+
+
 int main() {
+
     MYNODE_MANAGER manager = { 0 };
     InitList(&manager);
     
@@ -16,7 +18,7 @@ int main() {
 }
 
 
- //             dummy data 10000鯵 持失
+ //             dummy data 持失
 
 //int main()
 //{
